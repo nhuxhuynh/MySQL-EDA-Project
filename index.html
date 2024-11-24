@@ -4,46 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MySQL Data Exploratory Analysis (EDA) Project</title>
-    <style>
+        <style>
+        /* General Styling */
         body {
-            background-color: #f4f1ea; 
-            color: #3e4e50;
-            font-family: Arial, sans-serif;
+            background-color: #e0d7c4; /* Soft beige background for a natural feel */
+            color: #4f4b3e; /* Dark brown color for text */
+            font-family: "Times New Roman", Times, serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
         }
+
         h1 {
-            color: #2c5f2d; 
-            font-size: 2em;
+            color: #3e2a47; /* Dark brownish purple color for the title */
+            font-size: 2.5em;
+            margin-top: 50px;
         }
+
         h2 {
-            color: #3e4e50;
+            color: #4f4b3e;
             font-size: 1.5em;
         }
+
         a {
-            color: #3d5a80; 
+            color: #6b4f3d; /* Warm brown color for links */
             text-decoration: none;
-            border-bottom: 1px solid #3d5a80;
+            border-bottom: 1px solid #6b4f3d;
             transition: color 0.3s ease, border-bottom-color 0.3s ease;
         }
+
         a:hover {
-            color: #2c5f2d;
-            border-bottom-color: #2c5f2d;
+            color: #3e2a47;
+            border-bottom-color: #3e2a47;
         }
+
+        /* Buttons Styling */
+        .top-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Adds space between buttons */
+            margin: 20px 0; /* Adds space above and below the buttons */
+        }
+
+        .top-buttons .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #8e7a59; /* Muted brown button color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .top-buttons .button:hover {
+            background-color: #6b5d42; /* Darker shade on hover */
+            transform: scale(1.05);
+        }
+
+        /* File List Styling */
         .file-list {
-            background-color: #e6ebe0; 
+            background-color: #f7e6d5; /* Light, warm beige background */
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: 20px auto;
         }
+
+        /* Project Steps Section Styling */
+        .project-steps {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f5f1e3; /* Light cream background */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 80%; /* Limit width for project steps */
+            max-width: 1000px;
+        }
+
+        .project-steps h2 {
+            text-align: center;
+            color: #3e2a47;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            margin-bottom: 30px;
+        }
+
+        .step h3 {
+            color: #4f4b3e;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #4f4b3e;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .step img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+
+        /* Project Logo Styling */
+        .project-logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to My MySQL Data Exploratory Analysis (EDA) World Layoffs Project!</h1>
+    <img src="image/eda10.png" alt="mySQL Project" class="project-logo">
     <p>This project includes a MySQL EDA file and a Layoffs Excel file for data exploratory analysis which is an extension to my data cleaning project. My GitHub page for all of my projects is: <a href="https://github.com/nhuxhuynh" target="_blank">https://github.com/nhuxhuynh</a></p>
+
+    <div class="top-buttons">
+        <a href="https://nhuxhuynh.github.io/nhuxhuynh-portfolio/" class="button">Go back to Portfolio</a>
+        <a href="https://nhuxhuynh.github.io/MySQL-Data-Cleaning-Project/" class="button" target="_blank">Go to Layoffs EDA Project</a>
+    </div>
+    
     <h2>View Files:</h2>
     <div class="file-list">
     <ul>
@@ -51,5 +153,72 @@
         <li><a href="https://github.com/nhuxhuynh/MySQL-EDA-Project/blob/main/layoffs.csv" target="_blank" download="layoffs.csv">Download Layoffs Excel File</a></li>
     </ul>
     </div>
+    
+    <!-- Project Steps Section -->
+<div class="project-steps">
+    <h2>Exploratory Data Analysis on Layoffs</h2>
+
+    <!-- Step 1 -->
+    <div class="step">
+        <h3>Exploring the World Layoffs in Different Ways</h3>
+        <p>
+           This is an extension to my Layoffs Data Cleaning Project (View the 1st Project in the above button and) and the EDA files for this project could be downloaded above! I started off exploring this data by using simple functions such as the Max (MAX()) number and percentage of layoffs from all the companies, the % of layoffs that equal to 1 (or 100%) ordering by their funds raised millions in descending order (seeing how much funds they raised and if they 100% laid off their employees), using sum (SUM()) to see total of laysoff per company, and the MIN() and MAX() dates (first and last date layoff was recored).
+        </p>
+        <img src="image/eda1.png" alt="Intro" class="step-image">
+          <p>
+            Here's an example of the result I go when I ran the SUM() of total laid off grouping by their company (names) and descending from most laid off to least total laid off companies.
+        </p>
+        <img src="image/eda2.png" alt="Step 1" class="step-image">
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+        <h3>Viewing the Total Laid Off of Each Based on a Specific Column</h3>
+        <p>
+            In this step, I checked for any duplicates by selecting the layoffs_staging table and looking at all the rows of each column. I decided to create another table called "layoffs_staging2" from the "layoffs_staging" table to delete the duplicates and avoid redundancy processes.
+        </p>
+        <img src="image/eda3.png" alt="Step 1" class="step-image">
+        <p>
+            I used ROW_NUMBER() and made a new column named "row_num" as well as partitioning each column in my data to list the numbers of duplicates. For example, any row_num listed that is greater than (>) 1 gets removed. I checked to see if my code works by selecting "layoffs_staging" and a random company "Casper." It worked! There's only one result for Casper, so no duplicates!
+        </p>
+        <img src="image/eda4.png" alt="Step 1" class="step-image">
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+        <h3>Using SUBSTRING()</h3>
+        <p>
+            In Step 2, I standardized the data that I previously saw was not uniform and consistent. This part is important for data integrity and accuracy! I fixed the white space before each company name using TRIM(). I removed typos such as the "%" after the "Crypto" industry and the "." at the end of "United States." Now this makes the data so much more reliable to use!
+        </p>
+        <img src="image/eda5.png" alt="Step 2" class="step-image">
+      
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+        <h3>Step 3: Null and Blank Values</h3>
+        <p>
+            For Step 3, I checked the columns where I noticed there were Null and Blank values. In the percentage_laid_off and total_laid_off, I didn't remove or populate the null values yet because null is an absence of value; the company didn't provide the #, so it's unknown. I cannot populate a random number or remove it for the consistency of the data without introducing misinformation and altering results for decision-making.
+        </p>
+        <img src="images/unnamed6.png" alt="Step 3" class="step-image">
+        <p>
+            However, I did populate the Null and Blank values in the industry column. I did this by using the same existing company's industry data to populate the same company that has their industry as Null or Blank. I made all Blank values into Null values before populating all Nulls.
+        </p>
+        <img src="images/unnamed7.png" alt="Step 3" class="step-image">
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step">
+        <h3>Step 4: Remove Unnecessary Columns</h3>
+        <p>
+            In Step 4, I removed the percentage_laid_off and total_laid_off columns because of the Null values. I also removed the row_num column because it was no longer needed for the final result.
+        </p>
+        <img src="images/unnamed8.png" alt="Step 4" class="step-image">
+        <p>
+            This is a view of the final table of layoffs_staging2! The data can be downloaded above or through my GitHub profile: mySQL and layoffs.csv. Thank you for viewing my World Layoffs Data Cleaning Project! :)
+        </p>
+        <img src="images/unnamed9.png" alt="Step 4" class="step-image">
+    </div>
+</div>
 </body>
 </html>
