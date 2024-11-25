@@ -243,10 +243,12 @@
         <h3>Using Common Table Expressions (CTE) to Explore Data</h3>
         <p>
             This query uses two Common Table Expressions (CTEs) to analyze layoffs:
+        </p>
         <ul>
             <li>The first CTE aggregates data by company and year, calculating the total layoffs (`SUM()`) as well.</li>
             <li>The second CTE ranks companies within each year using the `DENSE_RANK()` function, ordered by total layoffs in descending order and not using any year that is NULL.</li>
         </ul>
+        <p>
             The final query filters the results to display only the top 5 companies with the highest layoffs per year (`WHERE Ranking <= 5`). 
             This analysis highlights trends in workforce reductions, helping to identify companies significantly impacted in different years. 
         </p>
